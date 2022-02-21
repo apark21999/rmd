@@ -1,0 +1,56 @@
+---
+title: "mtcars"
+author: "Ashley Park"
+date: "2/20/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see [this link](<http://rmarkdown.rstudio.com>).
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r mtcars 1}
+summary(mtcars)
+mtcars
+```
+
+## New subset for cars that have 4 cylinders
+```{r mtcars 2}
+summary(as.factor(mtcars$cyl))
+cylinder<- mtcars[,2, drop=FALSE]
+four_cyl<- subset(cylinder, cyl == 4)
+four_cyl
+```
+## Plot the relationship between gas mileage and engine displacement for the subset (4cylinders)
+```{r mtcars 3}
+mpg_fourcyl<- mtcars[ c(1:3)]
+four_cyl1<- subset(mpg_fourcyl, cyl == 4)
+mpg1 <- four_cyl1$mpg
+disp1 <- four_cyl1$disp
+plot(mpg1, disp1)
+
+```
+
+
+
+## New subset for cars that have 6 cylinders
+```{r mtcars 4}
+summary(as.factor(mtcars$cyl))
+cylinder6<- mtcars[,2, drop=FALSE]
+six_cyl <- subset(cylinder6, cyl == 6)
+six_cyl
+```
+## Plot the relationship between gas mileage and engine displacement for the subset (6cylinders)
+```{r mtcars 5}
+mpg_sixcyl<- mtcars[ c(1:3)]
+six_cyl1<- subset(mpg_sixcyl, cyl == 6)
+mpg2 <- six_cyl1$mpg
+disp2 <- six_cyl1$disp
+plot(mpg2, disp2)
+```
