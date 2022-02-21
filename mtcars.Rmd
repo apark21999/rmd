@@ -2,7 +2,7 @@
 title: "mtcars"
 author: "Ashley Park"
 date: "2/20/2022"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
